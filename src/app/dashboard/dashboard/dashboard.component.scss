@@ -1,0 +1,105 @@
+#marginTop {
+  margin-top: -60px;
+}
+
+#numberCount {
+  background-color: #FFFFFF;
+}
+
+.input-group-text {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.selectorLabel {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-default {
+  background-color: #4491FF;
+  color: #FFFFFF;
+}
+
+
+.form-control {
+  background-color: #E8F6FE;
+}
+
+.input-group-text {
+  background-color: #E8F6FE;
+}
+
+.fa-calendar {
+  color: #4491FF;
+}
+
+::ng-deep .ng-select .ng-select-container {
+  background-color: #E8F6FE;
+}
+
+.countBar {
+  background-color: #E8EFFD;
+}
+.countLogo {
+  height: 50px;
+}
+
+.countNumber {
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #4491FF;
+}
+
+.headerText {
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.secondCountingCard {
+  background-color: #E3F4FF;
+}
+
+
+//top count bar css
+.countBar {
+  background-color: #E8EFFD;
+}
+
+.countNumber {
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #4491FF;
+}
+
+.headerText {
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.countLogo {
+  height: 50px;
+}
+
+.paddingRight {
+  padding-right: calc(var(--bs-gutter-x) * .2);
+}
+
+.paddingLeft {
+  padding-left: calc(var(--bs-gutter-x) * .2);
+}
+
+.paddingBottom {
+  padding-bottom: calc(var(--bs-gutter-x) * .2);
+}
+
+.paddingTop {
+  padding-top: calc(var(--bs-gutter-x) * .2);
+}
+
+.cursorPointer {
+  cursor: pointer;
+}

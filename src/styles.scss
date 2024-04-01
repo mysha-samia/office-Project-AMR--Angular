@@ -1,7 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+html, body {
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.mat-typography {
+  background: #E5E5E5;
+}
+
+.bold-font-family {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.regular-font-family {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.light-font-family {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.kalpurush_font {
+  font-family: 'Kalpurush', sans-serif;
+}
+
+#toast-container > .toast-success {
+  background-image: none;
+  background-color: #58a454;
+  color: white;
+}
+
+#toast-container > .toast-error {
+  background-image: none;
+  background-color: #c0342c;
+  color: white;
+}
+
+#toast-container > .toast-warning {
+  background-image: none;
+  background-color: #ffac24;
+  color: white;
+}
+
+/* Importing Bootstrap SCSS file. */
+
+
+//@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@ng-select/ng-select/themes/default.these.css";
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.position-top {
+  position: relative;
+  top: 106px;
+}
+
+.selectorLabelGraph {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-size: 23px;
+  line-height: 140%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-dialog-container {
+  background: #e5e5e5;
+  padding: 11px !important;
+}

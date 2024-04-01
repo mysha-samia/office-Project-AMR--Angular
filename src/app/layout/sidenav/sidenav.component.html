@@ -1,0 +1,65 @@
+<!--for firefox/safari browser-->
+<div class="sidenav" *ngIf="firefoxOrSafariBrowser" [ngStyle]="{'height': sidebarHeight}">
+  <div *ngIf="!userType">
+    <img class="pharmasia_logo img-fluid" [src]="getCompanyImage()" alt="pharmasia logo">
+  </div>
+  <div class="menu d-grid justify-content-center mt-3 pt-1">
+    <nav class="mt-4 pb-1 mb-5">
+      <a class="link" routerLink="/dashboard" routerLinkActive = "active-link">
+        <img class="img-color" src="../../../assets/svg/home.svg" alt="dashbaord">
+        <span class="ms-3 text-color">DASHBOARD</span>
+      </a>
+      <a routerLink="/ssk" class="link" routerLinkActive="active-link">
+        <img class="img-color" src="../../../assets/svg/user.svg" alt="ssk">
+        <span class="ms-3 text-color">SSK</span>
+      </a>
+      <a class="d-flex" class="link" routerLink="/service-graph" routerLinkActive="active-link">
+
+        <img class="img-color" src="../../../assets/svg/graph.svg" alt="service graph">
+
+        <span class="margin-text text-color">SERVICE GRAPH</span>
+      </a>
+      <a routerLink="/reports" class="link" routerLinkActive="active-link">
+        <img class="img-color" src="../../../assets/svg/report.png" alt="reports">
+        <span class="ms-3 text-color">REPORTS</span>
+      </a>
+    </nav>
+    <div class="mt-5 pt-5 d-grid justify-content-center powered">
+      <span class="powered-by ms-2 mb-2">POWERED BY</span>
+      <img class="img-color cmed-logo" src="../../../assets/svg/Vector.svg" alt="">
+    </div>
+  </div>
+</div>
+
+<!--for chrome browser-->
+<div class="sidenav" *ngIf="!firefoxOrSafariBrowser">
+  <div *ngIf="!userType">
+    <img class="pharmasia_logo img-fluid" [src]="getCompanyImage()" alt="pharmasia logo">
+  </div>
+  <div class="menu d-grid justify-content-center mt-3 pt-1">
+    <nav class="mt-4 pb-5 mb-5">
+      <a class="link" routerLink="/dashboard" routerLinkActive = "active-link">
+        <img class="img-color" src="../../../assets/svg/home.svg" alt="dashbaord">
+        <span class="ms-3 text-color">DASHBOARD</span>
+      </a>
+      <a routerLink="/ssk" class="link" routerLinkActive="active-link">
+        <img class="img-color" src="../../../assets/svg/user.svg" alt="ssk">
+        <span class="ms-3 text-color">SSK</span>
+      </a>
+      <a class="d-flex" class="link" routerLink="/service-graph" routerLinkActive="active-link">
+
+        <img class="img-color" src="../../../assets/svg/graph.svg" alt="service graph">
+
+        <span class="margin-text text-color">SERVICE GRAPH</span>
+      </a>
+      <a routerLink="/reports" class="link" routerLinkActive="active-link">
+        <img class="img-color" src="../../../assets/svg/report.png" alt="reports">
+        <span class="ms-3 text-color">REPORTS</span>
+      </a>
+    </nav>
+    <div class="mt-5 pt-5 d-grid justify-content-center powered">
+      <span class="powered-by ms-2 mb-2">POWERED BY</span>
+      <img class="img-color cmed-logo" src="../../../assets/svg/Vector.svg" alt="">
+    </div>
+  </div>
+</div> 

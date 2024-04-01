@@ -1,0 +1,191 @@
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 0px 104px;
+
+
+  left: 0px;
+  top: 51px;
+  position: fixed;
+  //phar/prime
+
+  background: #113C90;
+  border-radius: 0px 0px 40px 40px;
+  height: 93%;
+
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 792px) {
+  .sidenav {
+    display: flex;
+    justify-content: start;
+    width: 8.5% !important
+  }
+  .pharmasia_logo {
+    width: 8.5% !important;
+  }
+  .menu {
+    display: inline-block;
+    width: 90% !important;
+  }
+  .text-color {
+    display: none;
+  }
+
+  .powered-by {
+    // width:70px;
+    margin-left: 4px;
+    font-size: 9px !important;
+  }
+
+  .cmed-logo {
+    // margin-left: 3px;
+    width: 100%;
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0% !important;
+  }
+  .active-link::before {
+
+    border-radius: 3px;
+    margin-left: -34px !important;
+
+  }
+  .bg {
+    min-height: 100vh !important;
+  }
+
+}
+
+@media only screen and (min-width: 792px) {
+  .sidenav {
+    width: 20%;
+  }
+  .pharmasia_logo {
+    width: 100% !important;
+  }
+  .menu {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .sidenav {
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .sidenav {
+    width: 16.666667%;
+  }
+}
+
+.pharmasia_logo {
+  width: 500px !important;
+}
+
+.logo {
+  padding: 16px;
+  gap: 24px;
+
+  width: 267px;
+  height: 102px;
+
+  background: #FFFFFF;
+  border-radius: 40px 0px;
+}
+
+.list-type {
+  list-style-type: none;
+  padding: 32px;
+}
+
+.menu {
+  // background-color: red;
+  width: 288px;
+
+  font-family: 'Poppins', serif;
+
+}
+
+.active-link {
+
+  background-color: #A1B7E3;
+  cursor: pointer;
+
+  border-radius: 16px;
+  // outline: 10px solid #A1B7E3;
+  .text-color {
+    color: #FFFFFF !important;
+  }
+
+  .img-color {
+
+    filter: brightness(0) invert(1);
+  }
+}
+
+.active-link::before {
+  content: "|";
+  background: #FFFFFF;
+  color: #FFFFFF;
+  position: absolute;
+  border-radius: 3px;
+  margin-left: -12px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-color {
+  color: #A3AED0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+
+
+.bar-logo {
+  margin-right: -2px;
+  margin-top: -4px;
+}
+
+.plus-logo {
+  position: absolute;
+  margin-top: -3px;
+  margin-left: 12px;
+}
+
+.margin-text {
+  margin-left: 12px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 17px 23px;
+}
+
+.powered-by {
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.w-8 {
+  width: 400px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: 110px;
+}

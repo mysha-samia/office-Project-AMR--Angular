@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-image: url("../../../assets/image/new-login-background.png");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+//Add styles to the form container
+.containers {
+  border-radius: 20px;
+  padding: 20px 50px 50px 50px;
+  background-color: white;
+
+  top: 50%;
+  left: 65%;
+  width: 30em;
+  transform: translate(0%, -50%);
+  position: fixed;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4491FF;
+  color: white;
+  padding: 6px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+#cmedLogo {
+  //height: 60px;
+  padding-top: 24px;
+  height: 75px;
+  width: auto;
+}
+
+#keepMeLoggedInText {
+  margin-left: 5px;
+}
+
+#password, #email {
+  padding: 8px;
+}
+
+#userIcon, #passwordIcon {
+  margin-top: 5px;
+  padding: 7px 7px 11px 7px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#email, #password {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+#password{
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.input-group-text {
+  background-color: #E8F0FE;
+  border-color: #E8F0FE;
+}
+
+.logo {
+  height: 18px;
+  width: auto;
+}
+
+i {
+  color: #4491FF;
+  cursor: pointer;
+}
+
+#eyeIcon {
+  border-radius: 0 6px 6px 0 ;
+  margin-top: 5px;
+}
+
+#checkBox {
+  padding-left: 8px;
+}

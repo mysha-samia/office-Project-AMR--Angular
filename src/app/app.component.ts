@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import{AuthenticationService} from "./shared/common/authentication.service";
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'anti-microbial-resistance';
+  constructor(private authenticationService:AuthenticationService) {
+  }
+  isLoggedIn(): boolean {
+    return this.authenticationService.isLoggedIn();
+  }
 }

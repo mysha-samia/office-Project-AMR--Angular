@@ -1,0 +1,468 @@
+<div class="container-fluid position-top" id="marginTop">
+  <div class="mb-3"></div>
+  <!--  <app-current-date></app-current-date>-->
+
+
+  <!--  for distributor-->
+  <div class="card" *ngIf="!userTypeAMR">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-4 paddingRight paddingBottom">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/world-location.svg" class="countLogo pt-2" alt="logoLocation">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Zone</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5 class="countNumber">{{distributorUsersSummaryData?.totalZone ? distributorUsersSummaryData.totalZone : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 paddingLeft paddingRight paddingBottom">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/region.svg" class="countLogo pt-2">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Region</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalRegion ? distributorUsersSummaryData.totalRegion : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 paddingLeft paddingBottom">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/area.svg" class="countLogo pt-2">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Area</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalArea ? distributorUsersSummaryData.totalArea : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col-4 paddingRight">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/location.svg" class="countLogo pt-2">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Territory</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5 class="countNumber">{{distributorUsersSummaryData?.totalTerritory ? distributorUsersSummaryData.totalTerritory : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 paddingLeft paddingRight ">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/ssk.svg" class="countLogo pt-2" alt="">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">SSK</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalSSK ? distributorUsersSummaryData.totalSSK : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 paddingLeft">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/total-user.svg" class="countLogo pt-2" alt="">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Total Users</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalUsers ? distributorUsersSummaryData.totalUsers : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  for AMR-->
+  <div class="card" *ngIf="userTypeAMR">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-3 paddingLeft paddingBottom">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/area.svg" class="countLogo pt-2">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Area</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalArea ? distributorUsersSummaryData.totalArea : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 paddingRight">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/location.svg" class="countLogo pt-2">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Territory</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalTerritory ? distributorUsersSummaryData.totalTerritory : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 paddingLeft paddingRight ">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/ssk.svg" class="countLogo pt-2">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Drug Seller</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalSSK ? distributorUsersSummaryData.totalSSK : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 paddingLeft">
+          <div class="card">
+            <div class="card-body countBar">
+              <div class="row">
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <img src="../../../assets/logo/total-user.svg" class="countLogo pt-2">
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="d-flex justify-content-start mt-1">
+                    <h5 class="headerText mb-1">Total Users</h5>
+                  </div>
+                  <div class="d-flex justify-content-start">
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalUsers ? distributorUsersSummaryData.totalUsers : '0'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<app-selector (filterData)="filterData($event)"></app-selector>-->
+
+  <!--  <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>-->
+  <!--      <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>-->
+  <!--  for distributor-->
+  <div *ngIf="!requestSubmitted && !userTypeAMR" class="shadow p-3 mb-5 bg-body rounded">
+    <div class="row">
+      <div class="col-4 paddingRight paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">New User Registration</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalNewUsers ? serviceSummaryData?.totalNewUsers : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 paddingLeft paddingRight paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">Served</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5 class="countNumber">{{serviceSummaryData?.totalServed ? serviceSummaryData?.totalServed : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 paddingLeft paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">Screening</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalScreening ? serviceSummaryData?.totalScreening : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-4 paddingRight paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">Telemedicine</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalTelemedicineCount ? serviceSummaryData?.totalTelemedicineCount : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 paddingLeft paddingRight paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">No. of Prescriptions with Product</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalPrescriptionWithProduct ? serviceSummaryData?.totalPrescriptionWithProduct : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 paddingLeft paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">No. of Product Prescribed</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalPrescribedProduct ? serviceSummaryData?.totalPrescribedProduct : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-4 paddingRight paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">Hospital Referral</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalHospitalReferral ? serviceSummaryData?.totalHospitalReferral : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 paddingLeft paddingRight paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">Diagnostic Referral</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalDiagnosticReferral ? serviceSummaryData?.totalDiagnosticReferral : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 paddingLeft paddingBottom">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">Specialist Referral</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalSpecialistReferral ? serviceSummaryData?.totalSpecialistReferral : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  for AMR-->
+  <div *ngIf="!requestSubmitted && userTypeAMR" class="shadow p-3 mb-5 bg-body rounded">
+    <div class="row">
+      <div class="col-6 paddingRight paddingBottom cursorPointer" (click)="gotoUserList('NEW_USER_REGISTRATION')">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">New User Registration</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalNewRegisteredUser ? serviceSummaryData?.totalNewRegisteredUser : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 paddingLeft paddingBottom cursorPointer" (click)="gotoUserList('USER_WITH_SYMPTOMS')">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">User with symptom</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalUserWithSymptoms ? serviceSummaryData?.totalUserWithSymptoms : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-6 paddingRight paddingBottom cursorPointer" (click)="gotoUserList('USER_WITH_PRESCRIPTION')">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">User with prescription</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalUserWithPrescription ? serviceSummaryData?.totalUserWithPrescription : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 paddingLeft paddingBottom cursorPointer" (click)="gotoUserList('USER_WITH_MEDICINE_NAME')">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">User with medicine name</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5 class="countNumber">{{serviceSummaryData?.totalUserWithMedicineName ? serviceSummaryData?.totalUserWithMedicineName : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-6 paddingRight paddingBottom cursorPointer" (click)="gotoUserList('USER_REFUSE_TO_TAKE_TELEMEDICINE_BUT_BUY_MEDICINE')">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">User refuses to take telemedicine but buy medicine</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5
+                class="countNumber">{{serviceSummaryData?.userRefuseToTakeTelemedicineButBuyMedicine ? serviceSummaryData?.userRefuseToTakeTelemedicineButBuyMedicine : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 paddingLeft paddingBottom cursorPointer" (click)="gotoUserList('USER_TAKEN_TELEMEDICINE')">
+        <div class="card secondCountingCard">
+          <div class="card-body">
+            <div class="d-flex justify-content-center mt-1">
+              <h5 class="headerText mb-1">User taken telemedicine service</h5>
+            </div>
+            <div class="d-flex justify-content-center">
+              <h5 class="countNumber">{{serviceSummaryData?.userTakenTelemedicine ? serviceSummaryData?.userTakenTelemedicine : 0}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

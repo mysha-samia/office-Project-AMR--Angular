@@ -1,0 +1,36 @@
+.topnav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 16px;
+  height: 50px;
+  width: 100%;
+  z-index: 30;
+
+}
+
+.text-color {
+  color: #006FC7;
+}
+
+.font-size {
+  font-family: 'Poppins', serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.font-17 {
+  // font-family: 'Poppins';
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#logout {
+  cursor: pointer;
+}
+
+#susasthoLogo {
+  height: 45px;
+}

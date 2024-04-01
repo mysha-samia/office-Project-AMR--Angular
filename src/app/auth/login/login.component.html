@@ -1,0 +1,59 @@
+<div class="bg-img">
+
+  <div class="row h-100">
+    <div class="col-12 text-end">
+      <form [formGroup]="loginForm" class="containers">
+        <div class="row">
+          <img src="assets/logo/susastho-logo.svg" style="height: 80px;">
+        </div>
+
+        <div class="d-flex justify-content-left">
+          <label for="email"><b>User ID</b></label>
+        </div>
+
+        <div class="d-flex justify-content-start">
+          <div class="input-group-prepend">
+                <span class="input-group-text" id="userIcon">
+                  <img src="assets/logo/user-icon.svg" class="logo">
+                </span>
+          </div>
+          <input formControlName="username" type="text" name="username" placeholder="username" class="form-control"
+                 id="email">
+        </div>
+
+        <div class="d-flex justify-content-left">
+          <label for="psw"><b>Password</b></label>
+        </div>
+
+        <div class="d-flex justify-content-start">
+          <div class="input-group-prepend">
+                <span class="input-group-text" id="passwordIcon">
+                  <img src="assets/logo/password.svg" class="logo">
+                </span>
+          </div>
+          <input formControlName="password" type="{{type}}" name="password" placeholder="Password" class="form-control"
+                 id="psw">
+          <div class="input-group-prepend">
+                <span class="input-group-text" id="eyeIcon">
+                  <i class="fa fa-eye logo" *ngIf="!hide" (click)="hidePassword('hide')"></i>
+                  <i class="fas fa-eye-slash logo" *ngIf="hide" (click)="hidePassword('show')"></i>
+                </span>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-left">
+          <div class="custom-control custom-checkbox mt-1 mb-3" id="checkBox">
+            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1"
+                   [(ngModel)]="marked" [ngModelOptions]="{standalone: true}" checked>
+            <label class="custom-control-label" for="customCheck" id="keepMeLoggedInText">Keep me logged in</label>
+          </div>
+        </div>
+        <button type="submit" class="btn" (click)="loggedIn(loginForm.value)">LOGIN</button>
+
+        <div class="d-flex justify-content-center">
+          <img src="./assets/login/cmed_logo.png" class="img-fluid" alt="enrich logo" id="cmedLogo">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
