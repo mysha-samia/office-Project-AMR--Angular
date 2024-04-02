@@ -46,8 +46,8 @@ export class AuthenticationService {
           Localstorage.putAuth(result);
           // decode access_token start
           try {
-            // @ts-ignore
-            let decodedToken: any = jwt_decode(auth.access_token);
+            let decodedToken: any = decodeAccessToken(auth.access_token);
+            console.log(decodedToken);
             console.log(decodedToken?.authorities);
             if (decodedToken?.authorities?.includes('ACCESS_AMR')) {
               localStorage.setItem('userType', 'AMR');
@@ -67,6 +67,12 @@ export class AuthenticationService {
         console.log(error1);
         this.loginCount = 0;
       });
+    }
+
+    function decodeAccessToken(accessToken:any) {
+      const payload = accessToken.split('.')[1];
+      const decodedPayload = atob(payload);
+      return JSON.parse(decodedPayload);
     }
   }
 
