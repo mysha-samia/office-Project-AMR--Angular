@@ -23,10 +23,10 @@ export class SelectorComponent {
   }
 
   selectEndDate() {
-    
+
   }
 
   onOpenCalendar($event: unknown) {
-    
+
   }
 }

@@ -29,7 +29,7 @@ export class AuthenticationService {
   isLoggedIn(): boolean {
     if (Localstorage.retrive(Localstorage.KEYS.accessToken)) {
       return true;
-    }else {
+    } else {
       return false;
     }
   }
@@ -69,7 +69,7 @@ export class AuthenticationService {
       });
     }
 
-    function decodeAccessToken(accessToken:any) {
+    function decodeAccessToken(accessToken: any) {
       const payload = accessToken.split('.')[1];
       const decodedPayload = atob(payload);
       return JSON.parse(decodedPayload);
