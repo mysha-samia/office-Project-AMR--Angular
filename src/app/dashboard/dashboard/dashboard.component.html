@@ -242,10 +242,10 @@
       </div>
     </div>
   </div>
-  <!--<app-selector (filterData)="filterData($event)"></app-selector>-->
+  <app-selector (filterData)="filterData($event)"></app-selector>
 
-  <!--  <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>-->
-  <!--      <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>-->
+    <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>
+        <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>
   <!--  for distributor-->
   <div *ngIf="!requestSubmitted && !userTypeAMR" class="shadow p-3 mb-5 bg-body rounded">
     <div class="row">

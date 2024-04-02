@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-// import jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 import {BehaviorSubject, Observable, Subject} from "rxjs";
 import {Localstorage} from "./localstorage";
 import {environment} from "../../../environments/environment";
@@ -27,10 +27,11 @@ export class AuthenticationService {
   }
 
   isLoggedIn(): boolean {
-    if (Localstorage.retrive(Localstorage.KEYS.accessToken) && localStorage.getItem('userType')) {
+    if (Localstorage.retrive(Localstorage.KEYS.accessToken)) {
       return true;
+    }else {
+      return false;
     }
-    return false;
   }
 
   login(username: string, password: string) {

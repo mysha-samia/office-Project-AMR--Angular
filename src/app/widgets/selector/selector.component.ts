@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-selector',
@@ -16,6 +16,7 @@ export class SelectorComponent {
   minDate: Date = this.startDate;
   maxEndDate: Date | undefined;
   endDate: any;
+  @Output() filterData = new EventEmitter<unknown>();
 
   selectStartDate() {
 
