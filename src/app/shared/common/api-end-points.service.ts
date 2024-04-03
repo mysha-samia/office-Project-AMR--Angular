@@ -10,6 +10,7 @@ export class ApiEndPointsService {
   private static API_VERSION_6 = '/api/v6';
   userTypeAMR: boolean = true;
 
+
   constructor(private auth: AuthenticationService) {
     this.auth.userTypeAMR.subscribe(data => {
       this.userTypeAMR = data;
@@ -18,7 +19,14 @@ export class ApiEndPointsService {
     });
   }
 
-
+  SELECTOR = {
+    GET_ALL_AGNET_TREE_LIST(codeList: any) {
+      return environment.base_url + environment.api_version_6 + `subordinates/agents/by/type-codes?codeList=${codeList}&direction=DESC&fieldName=id&page=0&size=100&slice=true`;
+    },
+    GET_SUB_AGENTS(agentType: string) {
+      return environment.base_url + environment.api_version_7 + `subordinates/agents/by/type-codes?codeList=${agentType}&size=100&slice=true`;
+    }
+  };
   DASHBOARD = {
     GET_DISTRIBUTOR_USERS_SUMMARY_DATA(agentID: any) {
       let url = environment.base_url + environment.api_version_6 + 'distributor/overview-user-info';
