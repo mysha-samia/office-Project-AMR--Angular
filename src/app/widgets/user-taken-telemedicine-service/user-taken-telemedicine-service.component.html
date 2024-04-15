@@ -1,1 +1,14 @@
-<p>user-taken-telemedicine-service works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="shadow p-3 mt-2 mb-2 bg-body rounded">
+      <p class="selectorLabelGraph">User Taken Telemedicine Service</p>
+      <div class="d-flex justify-content-center">
+        <img *ngIf="!data" src="assets/svg/nodata-found.png" alt="">
+        <figure class="highcharts-figure">
+          <div id="userTakenTelemedicineService"></div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+

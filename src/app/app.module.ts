@@ -33,7 +33,7 @@ import { UserRefuseToTakeTelemedicineButBuyMedicineComponent } from './widgets/u
 import { UserTakenTelemedicineServiceComponent } from './widgets/user-taken-telemedicine-service/user-taken-telemedicine-service.component';
 import { UserWithMedicineNameGraphComponent } from './widgets/user-with-medicine-name-graph/user-with-medicine-name-graph.component';
 import { UserWithPrescriptionGraphComponent } from './widgets/user-with-prescription-graph/user-with-prescription-graph.component';
-import { UserWithSymptomspGraphComponent } from './widgets/user-with-symptomsp-graph/user-with-symptomsp-graph.component';
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {JwtInterceptorService} from "./services/jwt-interceptor.service";
 import {ErrorInterceptorService} from "./services/error-interceptor.service";
@@ -42,6 +42,7 @@ import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {NgSelectModule} from "@ng-select/ng-select";
 import {DropdownModule} from "primeng/dropdown";
 import {CurrentDateComponent} from "./widgets/current-date/current-date.component";
+import { UserWithSymptomsGraphComponent } from './widgets/user-with-symptoms-graph/user-with-symptoms-graph.component';
 
 
 
@@ -76,7 +77,7 @@ import {CurrentDateComponent} from "./widgets/current-date/current-date.componen
     UserTakenTelemedicineServiceComponent,
     UserWithMedicineNameGraphComponent,
     UserWithPrescriptionGraphComponent,
-    UserWithSymptomspGraphComponent,
+    UserWithSymptomsGraphComponent,
 
 
 

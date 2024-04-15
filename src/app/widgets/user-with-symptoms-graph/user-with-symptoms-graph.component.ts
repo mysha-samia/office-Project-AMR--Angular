@@ -1,14 +1,15 @@
 import {Component, Input, OnInit} from '@angular/core';
-import * as Highcharts from "highcharts";
 import {GraphDataTypeModel} from "../../models/GraphDataTypeModel";
 import {GraphService} from "../../services/graph.service";
+import * as Highcharts from "highcharts";
 
 @Component({
-  selector: 'app-prescription-with-product-graph',
-  templateUrl: './prescription-with-product-graph.component.html',
-  styleUrls: ['./prescription-with-product-graph.component.scss']
+  selector: 'app-user-with-symptoms-graph',
+  templateUrl: './user-with-symptoms-graph.component.html',
+  styleUrls: ['./user-with-symptoms-graph.component.scss']
 })
-export class PrescriptionWithProductGraphComponent implements OnInit {
+export class UserWithSymptomsGraphComponent implements OnInit {
+
   @Input() data: GraphDataTypeModel[] | undefined = [];
   dynamicWidth: number = 100;
 
@@ -21,11 +22,11 @@ export class PrescriptionWithProductGraphComponent implements OnInit {
     }
 
     if (this.data !== null)
-      this.prescriptionWithProductGraph();
+      this.diagnosticChart();
   }
 
-  prescriptionWithProductGraph() {
-    Highcharts.chart('prescriptionWithProduct', {
+  diagnosticChart() {
+    Highcharts.chart('userWithSymptoms', {
       chart: {
         width: this.dynamicWidth
       },

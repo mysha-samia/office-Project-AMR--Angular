@@ -1,2 +1,60 @@
+<div class="container-fluid position-top">
+  <app-selector [monthOnly] ="true" (filterData)="getGraphData($event)"></app-selector>
+    <div class="row">
+      <div class="col-5">
+        <div class="shadow p-3 mt-2 mb-2 bg-body rounded">
+          <label class="selectorLabel">Select Service</label>
+          <ng-select [items]="serviceTypes"
+                     class="custom"
+                     [(ngModel)]="selectedService"
+                     bindlabel="name"
+                     (clear)="clearServices()"
+                     (change)="onChange()"
+                     [selectableGroup]="true"
+                     [closeOnSelect]="false"
+                     placeholder="select">
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"
+                     [ngModelOptions]="{standalone: true}"/> {{item.name}}
+            </ng-template>
+          </ng-select>
+        </div>
+      </div>
+    </div>
+  <!--    distributor graphs-->
+  <div *ngIf="this.dataLoaded && !userTypeAMR">
+    <app-diagnostic-graph [data]="serviceData?.diagnosticReferral"
+                          *ngIf="isVisible('DIAGNOSTIC')"></app-diagnostic-graph>
+    <app-hospital-graph [data]="serviceData?.hospitalReferral" *ngIf="isVisible('HOSPITAL')"></app-hospital-graph>
+    <app-new-user-graph [data]="serviceData?.newRegisteredUsers" *ngIf="isVisible('NEW_USERS')"></app-new-user-graph>
+    <app-prescription-with-product-graph [data]="serviceData?.prescriptionWithProduct"
+                                         *ngIf="isVisible('PRESCRIPTIONS_WITH_PRODUCT')"></app-prescription-with-product-graph>
+    <app-product-prescribed-graph [data]="serviceData?.prescribedProduct"
+                                  *ngIf="isVisible('PRODUCT_PRESCRIBED')"></app-product-prescribed-graph>
+    <app-screening-graph [data]="serviceData?.screening" *ngIf="isVisible('SCREENING')"></app-screening-graph>
+    <app-served-graph [data]="serviceData?.served" *ngIf="isVisible('SERVED')"></app-served-graph>
+    <app-specialists-referral-graph [data]="serviceData?.specialistReferral"
+                                    *ngIf="isVisible('SPECIALISTS')"></app-specialists-referral-graph>
+    <app-telemedicine-graph [data]="serviceData?.telemedicine"
+                            *ngIf="isVisible('TELEMEDICINE')"></app-telemedicine-graph>
+  </div>
 
+  <!--    AMR graphs-->
+  <div *ngIf="this.dataLoaded && userTypeAMR">
+    <app-user-with-prescription-graph [data]="serviceData?.userWithPrescription"
+                                      *ngIf="isVisible('USER_WITH_PRESCRIPTION')"></app-user-with-prescription-graph>
+    <app-user-with-symptoms-graph [data]="serviceData?.userWithSymptom"
+                                  *ngIf="isVisible('USER_WITH_SYMPTOMS')"></app-user-with-symptoms-graph>
+    <app-user-with-medicine-name-graph [data]="serviceData?.userWithMedicineName"
+                                       *ngIf="isVisible('USER_WITH_MEDICINE_NAME')"></app-user-with-medicine-name-graph>
+    <app-total-new-registration-user-graph [data]="serviceData?.newRegisteredUsers"
+                                           *ngIf="isVisible('TOTAL_NEW_REGISTRATION_USER')"></app-total-new-registration-user-graph>
+    <app-user-refuse-to-take-telemedicine-but-buy-medicine [data]="serviceData?.userRefuseToTakeTelemedicineButBuyMedicine"
+                                                           *ngIf="isVisible('USER_REFUSE_TO_TAKE_TELEMEDICINE_BUT_BUY_MEDICINE')"></app-user-refuse-to-take-telemedicine-but-buy-medicine>
+    <app-user-taken-telemedicine-service [data]="serviceData?.userTakenTelemedicine"
+                                         *ngIf="isVisible('USER_TAKEN_TELEMEDICINE')"></app-user-taken-telemedicine-service>
+
+
+  </div>
+</div>
 

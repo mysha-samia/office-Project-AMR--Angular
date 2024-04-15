@@ -21,7 +21,7 @@ export class SidenavComponent implements OnInit{
 
   getCompanyImage(): string{
    // @ts-ignore
-    return localStorage.getItem(Localstorage?.KEYS?.images);
+    return localStorage.getItem(Localstorage?.KEYS?.image);
   }
   sidebarDynamicCssHandle() {
     const  {detect} = require('detect-browser');

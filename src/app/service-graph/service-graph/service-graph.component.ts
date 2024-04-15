@@ -19,7 +19,7 @@ export class ServiceGraphComponent implements OnInit {
   eventData: any;
   userTypeAMR: boolean = localStorage.getItem('userType') === 'AMR';
 
-  constructor(private service: GraphService, private toast: ToastrService) {
+  constructor(private service: GraphService) {
   }
 
   ngOnInit(): void {
@@ -29,7 +29,8 @@ export class ServiceGraphComponent implements OnInit {
     // console.log(event);
     this.eventData = event;
     if (this.service.monthDiffMoreThan13(new Date(event.startDate), new Date(event.endDate))) {
-      this.toast.warning("You have selected more than 13 months");
+      // this.toast.warning("You have selected more than 13 months");
+      window.alert("You have selected more than 13 months");
       return;
     }
     this.dataLoaded = false;
@@ -58,7 +59,7 @@ export class ServiceGraphComponent implements OnInit {
       return values;
     } else if (values.length === 0) {
       return ['1'];
-    } else if (values[0] != '1' && values.includes('1')) {
+    } else if (values[0] != '1' && values?.includes('1')) {
       return ['1'];
     } else {
       return values.filter((id: any) => id !== '1');
