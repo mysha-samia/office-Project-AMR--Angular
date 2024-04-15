@@ -1,1 +1,61 @@
-<p>ssk works!</p>
+<div class="container-fluid position-top pb-4">
+  <app-selector (filterData)="filterData($event)"></app-selector>
+  <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>
+
+  <div class="row pt-2">
+    <div class="col-md-12">
+      <div id="table" class="table-responsive">
+        <table class="table table-bordered mb-0" *ngIf="sskList">
+          <thead class="">
+          <tr class="subHeader">
+            <th>SN</th>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>Address</th>
+            <th>Registered On</th>
+            <th>Last Served On</th>
+          </tr>
+          </thead>
+          <tbody class="text-center">
+          <tr *ngFor="let ssk of sskList; let i = index">
+            <td>{{i + 1 + pagination?.page * pagination?.itemPerPage}}</td>
+            <td>{{ssk?.name ? ssk?.name : ''}}_{{ssk?.username}}</td>
+            <td>{{ssk?.mobileNumber ? ssk?.mobileNumber : ''}}</td>
+            <td>{{ssk?.address ? addressCheck(ssk?.address) : ''}}</td>
+            <td>{{ssk?.registrationDate ? getDate(ssk?.registrationDate) : ''}}</td>
+            <td>{{maxDateFiltering(ssk?.lastServedPrescription, ssk?.lastServedMeasurement, ssk?.lastServedReferral)}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between mt-4">
+    <button class="btn btn-default" (click)="onClickDownloadReport()">
+      <i class="fa fa-download"></i> DOWNLOAD
+    </button>
+
+    <ngb-pagination class="d-flex justify-content-center"
+                    [maxSize]="6"
+                    [(page)]="page"
+                    [pageSize]="item"
+                    [collectionSize]="this.pagination?.total"
+                    (pageChange)="onPaginateChange($event)">
+    </ngb-pagination>
+
+    <div class="card itemCountCard">
+      <div class="card-body">
+        <ng-select [items]="items"
+                   class="custom"
+                   bindLabel="id"
+                   [clearable]="false"
+                   bindValue="value"
+                   [(ngModel)]="item"
+                   (change)="onChangeListSize()"
+                   placeholder="Select">
+        </ng-select>
+      </div>
+    </div>
+  </div>
+</div>

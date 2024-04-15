@@ -1,0 +1,64 @@
+.container-fluid {
+  background: #E5E5E5;
+  margin-top: -50px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-color: #E5E5E5;
+}
+
+th {
+  background-color: #4491FF;
+}
+
+td {
+  height: 30px;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  padding: 15px !important;
+  border-radius: 15px;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+td {
+  padding: 25px !important;
+  border-radius: 20px;
+  font-weight: 400;
+}
+
+.table-bordered>:not(caption)>*>* {
+  border-width: 6px 5px;
+}
+
+tr:nth-child(even) {background-color: #CFDEF9;}
+tr:nth-child(odd) {background-color: #E8F6FE;}
+
+.btn-default {
+  color: #4491FF;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 0px 30px 0px 30px;
+  font-weight: bold;
+}
+
+i{
+  color: #4491FF;
+}
+
+ng-select {
+  width: 200px;
+}
+
+.itemCountCard {
+  --bs-card-spacer-y: 0.4rem;
+  --bs-card-spacer-x: 0.4rem;
+}

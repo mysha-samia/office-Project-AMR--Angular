@@ -1,45 +1,95 @@
-<!--<div class="container-fluid pt-1 position-top pb-4">-->
+<div class="container-fluid pt-1 position-top pb-4">
 
-<!--  <app-report-selector *ngIf="selectedTab != 'Product_Prescribed_Report'" [isReport]="true"-->
-<!--                       (filterData)="filterData($event)"></app-report-selector>-->
-<!--  <app-report-selector-for-product-prescribed-report *ngIf="selectedTab == 'Product_Prescribed_Report'"-->
-<!--                                                     [isReport]="true"-->
-<!--                                                     (filterData)="filterData($event)"></app-report-selector-for-product-prescribed-report>-->
+  <app-report-selector *ngIf="selectedTab != 'Product_Prescribed_Report'" [isReport]="true"
+                       (filterData)="filterData($event)"></app-report-selector>
+  <app-report-selector-for-product-prescribed-report *ngIf="selectedTab == 'Product_Prescribed_Report'"
+                                                     [isReport]="true"
+                                                     (filterData)="filterData($event)"></app-report-selector-for-product-prescribed-report>
 
-<!--  <div class="row" *ngIf="!userTypeAMR">-->
-<!--    <div class="col-md">-->
-<!--      <div class="card" (click)="onClickTab('SSK_Performance_Report')"-->
-<!--           [ngStyle]="{'background': selectorColorForSSKPerformanceReport}">-->
-<!--        <div class="card-body cursorPointer">-->
-<!--          <div class="d-flex justify-content-start">-->
-<!--            <img src="../../../assets/logo/customer-service.svg" class="tabLogo">-->
-<!--            <p class="tabHeader" [ngStyle]="{'color': selectorColorForSSKPerformanceReportText}">SSK Performance-->
-<!--              Report</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-md">-->
-<!--      <div class="card" (click)="onClickTab('Product_Prescribed_Report')"-->
-<!--           [ngStyle]="{'background': selectorColorForProductPrescribedReport}">-->
-<!--        <div class="card-body cursorPointer">-->
-<!--          <div class="d-flex justify-content-start">-->
-<!--            <img src="../../../assets/logo/product-prescribed-report.svg" class="tabLogo">-->
-<!--            <p class="tabHeader" [ngStyle]="{'color': selectorColorForProductPrescribedReportText}">Product Prescribed-->
-<!--              Report</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-md">-->
-<!--      <div class="card" (click)="onClickTab('Referral_Center_Report')"-->
-<!--           [ngStyle]="{'background': selectorColorForReferralCenterReport}">-->
-<!--        <div class="card-body cursorPointer">-->
-<!--          <div class="d-flex justify-content-start">-->
-<!--            <img src="../../../assets/logo/referral-center-report.svg" class="tabLogo">-->
-<!--            <p class="tabHeader" [ngStyle]="{'color': selectorColorForReferralCenterReportText}">Referral Center-->
-<!--              Report</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+  <div class="row" *ngIf="!userTypeAMR">
+    <div class="col-md">
+      <div class="card" (click)="onClickTab('SSK_Performance_Report')"
+           [ngStyle]="{'background': selectorColorForSSKPerformanceReport}">
+        <div class="card-body cursorPointer">
+          <div class="d-flex justify-content-start">
+            <img src="../../../assets/logo/customer-service.svg" class="tabLogo">
+            <p class="tabHeader" [ngStyle]="{'color': selectorColorForSSKPerformanceReportText}">SSK Performance
+              Report</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card" (click)="onClickTab('Product_Prescribed_Report')"
+           [ngStyle]="{'background': selectorColorForProductPrescribedReport}">
+        <div class="card-body cursorPointer">
+          <div class="d-flex justify-content-start">
+            <img src="../../../assets/logo/product-prescribed-report.svg" class="tabLogo">
+            <p class="tabHeader" [ngStyle]="{'color': selectorColorForProductPrescribedReportText}">Product Prescribed
+              Report</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card" (click)="onClickTab('Referral_Center_Report')"
+           [ngStyle]="{'background': selectorColorForReferralCenterReport}">
+        <div class="card-body cursorPointer">
+          <div class="d-flex justify-content-start">
+            <img src="../../../assets/logo/referral-center-report.svg" class="tabLogo">
+            <p class="tabHeader" [ngStyle]="{'color': selectorColorForReferralCenterReportText}">Referral Center
+              Report</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card" (click)="onClickTab('Specialist_Referral_Report')"
+           [ngStyle]="{'background': selectorColorForSpecialistReferralReport}">
+        <div class="card-body cursorPointer">
+          <div class="d-flex justify-content-start">
+            <img src="../../../assets/logo/referral-center-report.svg" class="tabLogo">
+            <p class="tabHeader" [ngStyle]="{'color': selectorColorForSpecialistReferralReportText}">Specialist Referral
+              Report</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md" *ngIf="!userTypeAMR">
+      <div class="card" (click)="onClickTab('Territory_Wise_Report')"
+           [ngStyle]="{'background': selectorColorForTerritoryWiseReport}">
+        <div class="card-body cursorPointer ">
+          <div class="d-flex justify-content-start">
+            <img src="../../../assets/logo/location.svg" class="tabLogo">
+            <p class="tabHeader" [ngStyle]="{'color': selectorColorForTerritoryWiseReportText}">Territory-wise
+              Report</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md" *ngIf="!userTypeAMR"></div>
+    <div class="col-md" *ngIf="userTypeAMR">
+      <div class="card" (click)="onClickTab('Drug_Seller_Performance_Report')"
+           [ngStyle]="{'background': selectorColorForDrugSellerPerformanceReport}">
+        <div class="card-body cursorPointer ">
+          <div class="d-flex justify-content-start">
+            <img src="assets/logo/performance.png" class="tabLogo">
+            <p class="tabHeader" [ngStyle]="{'color': selectorColorForDrugSellerPerformanceReportText}">Drug Seller
+              Performance Report</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md"></div>
+    <div class="col-md"></div>
+  </div>
+
+  <div class="d-flex justify-content-center pb-5">
+    <button class="btn btn-success" (click)="onDownloadClicked()">
+      <i class="fa fa-download"></i> DOWNLOAD XLSX
+    </button>
+  </div>
+

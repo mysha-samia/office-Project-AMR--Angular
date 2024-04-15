@@ -1,1 +1,182 @@
-<p>report-selector works!</p>
+<!--  selector start-->
+<div class="shadow p-3 mt-2 mb-2 bg-body rounded">
+  <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>
+
+  <div class="row">
+    <div class="col-11">
+      <div class="row">
+        <div class="col-md" *ngIf="!monthOnly">
+          <div>
+            <label class="selectorLabel">From Date</label>
+          </div>
+          <div class="input-group">
+            <input class="form-control" bsDatepicker
+                   [maxDate]="maxStartDate"
+                   [bsConfig]="{dateInputFormat: 'DD MMM YYYY' ,containerClass:'theme-blue'}"
+                   #dp="bsDatepicker"
+                   [(ngModel)]="startDate"
+                   (ngModelChange)="selectStartDate()" readonly>
+            <div class="input-group-append">
+              <div class="input-group-text" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"><i
+                class="far fa-calendar pt-1 pb-1"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md" *ngIf="!monthOnly">
+          <div>
+            <label class="selectorLabel">To Date</label>
+          </div>
+          <div class="input-group">
+            <input class="form-control"
+                   bsDatepicker
+                   [bsConfig]="{dateInputFormat: 'DD MMM YYYY', containerClass:'theme-blue'}"
+                   [minDate]="minDate"
+                   [maxDate]="maxEndDate"
+                   [(ngModel)]="endDate"
+                   (ngModelChange)="selectEndDate()"
+                   #dp_2="bsDatepicker" readonly>
+            <div class="input-group-append" style="border-top-left-radius: 0px">
+              <div class="input-group-text" (click)="dp_2.toggle()" [attr.aria-expanded]="dp_2.isOpen"><i
+                class="far fa-calendar pt-1 pb-1"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md" *ngIf="monthOnly">
+          <div>
+            <label class="selectorLabel">Month From</label>
+          </div>
+          <div class="input-group">
+            <input class="form-control" bsDatepicker
+                   [maxDate]="maxStartDate"
+                   [bsConfig]="{dateInputFormat: 'MMM YYYY' ,containerClass:'theme-blue'}"
+                   #dp="bsDatepicker"
+                   [(ngModel)]="startDate"
+                   (onShown)="onOpenCalendar($event)"
+                   (ngModelChange)="selectStartDate()">
+            <div class="input-group-append">
+              <div class="input-group-text" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"><i
+                class="far fa-calendar pt-1 pb-1"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md" *ngIf="monthOnly">
+          <div>
+            <label class="selectorLabel">Month To</label>
+          </div>
+          <div class="input-group">
+            <input class="form-control"
+                   bsDatepicker
+                   [bsConfig]="{dateInputFormat: 'MMM YYYY', containerClass:'theme-blue'}"
+                   [minDate]="minDate"
+                   [maxDate]="maxEndDate"
+                   [(ngModel)]="endDate"
+                   (onShown)="onOpenCalendar($event)"
+                   (ngModelChange)="selectEndDate()"
+                   #dp_2="bsDatepicker">
+            <div class="input-group-append" style="border-top-left-radius: 0px">
+              <div class="input-group-text" (click)="dp_2.toggle()" [attr.aria-expanded]="dp_2.isOpen">
+                <i class="far fa-calendar pt-1 pb-1"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <label class="selectorLabel">Zone</label>
+          <ng-select [items]="zone"
+                     class="custom"
+                     bindLabel="name"
+                     bindValue="id"
+                     [multiple]="false"
+                     (add)="getSubAgents(selectedZone,'SSK_REGION')"
+                     (remove)="getSubAgents(selectedZone,'SSK_REGION',true,true)"
+                     (change)="onChangeSelector(selectedZone,'SSK_REGION')"
+                     [(ngModel)]="selectedZone"
+                     placeholder="All"
+                     [clearable]="false"
+                     [closeOnSelect]="true">
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"
+                     [ngModelOptions]="{standalone: true}"/> {{item.name}}
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="col-md">
+          <label class="selectorLabel">Region</label>
+          <ng-select [items]="region"
+                     class="custom"
+                     bindLabel="name"
+                     bindValue="id"
+                     [multiple]="false"
+                     [clearable]="false"
+                     (add)="getSubAgents(selectedRegion,'SSK_AREA')"
+                     (remove)="getSubAgents(selectedRegion,'SSK_AREA',true,true)"
+                     (change)="onChangeSelector(selectedRegion,'SSK_AREA')"
+                     [(ngModel)]="selectedRegion"
+                     placeholder="All"
+                     [closeOnSelect]="true">
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"
+                     [ngModelOptions]="{standalone: true}"/> {{item.name}}
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="col-md">
+          <label class="selectorLabel">Area</label>
+          <ng-select [items]="area"
+                     class="custom"
+                     bindLabel="name"
+                     bindValue="id"
+                     [multiple]="false"
+                     (add)="getSubAgents(selectedArea,'SSK_TERRITORY')"
+                     (remove)="getSubAgents(selectedArea,'SSK_TERRITORY',true,true)"
+                     (change)="onChangeSelector(selectedArea,'SSK_TERRITORY')"
+                     [(ngModel)]="selectedArea"
+                     placeholder="All"
+                     [clearable]="false"
+                     [closeOnSelect]="true">
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"
+                     [ngModelOptions]="{standalone: true}"/> {{item.name}}
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="col-md">
+          <label class="selectorLabel">Territory</label>
+          <ng-select [items]="territory"
+                     class="custom"
+                     bindLabel="name"
+                     bindValue="id"
+                     [multiple]="false"
+                     (add)="onAddTerritory(selectedTerritory)"
+                     (remove)="onAddTerritory(selectedTerritory, true)"
+                     [(ngModel)]="selectedTerritory"
+                     placeholder="All"
+                     [clearable]="false"
+                     [closeOnSelect]="true">
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected"
+                     [ngModelOptions]="{standalone: true}"/> {{item.name}}
+            </ng-template>
+          </ng-select>
+        </div>
+      </div>
+    </div>
+    <div class="col-1">
+      <div class="row">
+        <div class="col-md">
+          <div>
+            <label>.</label>
+          </div>
+          <button class="btn btn-default btn-block" (click)="getSelectorValues()"><i
+            class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>

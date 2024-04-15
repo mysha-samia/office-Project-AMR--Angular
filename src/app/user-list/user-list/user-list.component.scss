@@ -1,0 +1,95 @@
+#backgroundColor {
+  background-color: #f0f2f5;
+}
+
+.container-fluid {
+  padding-top: 55px;
+}
+
+.status {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+}
+
+.totalUser {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.curvedBtn {
+  width: 100%;
+  background: #FFFFFF;
+  color: #0040ED;
+  border-color: #FFFFFF;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.urlText {
+  color: #0040ED;
+  font-weight: 600;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#table {
+  background-color: #E5E5E5;
+
+  table.table-bordered > thead > tr > th {
+    border-bottom: 5px solid white !important;
+    background-color: #0040ED;
+    color: #FFF;
+    line-height: 2;
+    text-align: center;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+  }
+
+  .table-bordered td, .table-bordered th {
+    border: none !important;
+  }
+
+
+  table.table-bordered > tbody > tr > td {
+    border-top: 5px solid white !important;
+    border-bottom: 5px solid white !important;
+    background-color: #F5F5F5;
+    color: #000000;
+    font-size: 16px;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+}
+
+#tableDownloadAsPdf {
+  display: none;
+}
+
+.btn-default {
+  color: #0040ED;
+  background-color: white;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.fa-eye {
+  cursor: pointer;
+  color: #0040ED;
+}
+
+.textAlignmentRight {
+  text-align: right;
+}
+
+.textAlignmentCenter {
+  text-align:center;
+}

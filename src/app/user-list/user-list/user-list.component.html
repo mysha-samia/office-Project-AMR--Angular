@@ -1,1 +1,71 @@
-<p>user-list works!</p>
+<div class="container-fluid mt-4" id="backgroundColor">
+  <div class="row">
+    <div class="col-12">
+      <p class="totalUser mt-2 mb-2"></p>
+    </div>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="d-flex justify-content-start">
+          <button class="btn btn-primary" (click)="gotoDashboard()" style="width: 40px; height: 40px"><i class="fa fa-arrow-left"></i></button>
+          <h2 class="pt-1" style="margin-left: 10px">{{headerOfTable}}</h2>
+        </div>
+      </div>
+
+      <div class="col-4 textAlignmentRight">
+        <button class="btn btn-default mr-1" (click)="downloadAmrReportUserReport()"><i class="fa fa-download mr-1"></i> Download List</button>
+      </div>
+    </div>
+
+
+    <div class="col-12">
+      <div class="row mt-3 pl-3">
+        <div class="col-md-12 pl-0">
+          <div id="table" class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="">
+              <tr class="subHeader">
+                <th>SL</th>
+                <th>Gender</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>User ID/ Mobile No.</th>
+                <th *ngIf="!isNewUserRegistration">View</th>
+                <th>Blood Group</th>
+                <th>Service Date</th>
+              </tr>
+              </thead>
+              <tbody class="text-center" *ngIf="!loader">
+              <tr *ngFor="let user of userList, let i = index">
+                <td>{{i + 1 + pagination?.page * pagination?.itemPerPage}}</td>
+                <td *ngIf="user.gender == 'Male'"><img src="assets/image/male.svg"></td>
+                <td *ngIf="user.gender == 'Female'"><img src="assets/image/female.svg"></td>
+                <td *ngIf="user.gender == 'Other'"><img src="assets/image/others.svg"></td>
+                <td>{{user.patientName ? user.patientName : ''}}</td>
+                <td>{{user.age ? user.age : '0'}}</td>
+                <td>{{user.phoneNo ? user.phoneNo : ''}}</td>
+                <td *ngIf="!isNewUserRegistration"><i class="fa fa-eye" (click)="openDialog(user)"></i></td>
+                <td>{{user.bloodGroup ? user.bloodGroup : ''}}</td>
+                <td>{{user.serviceDate ? extractDate(user.serviceDate) : ''}} <BR> {{user.serviceDate ? extractTime(user.serviceDate) : ''}}</td>
+              </tr>
+              </tbody>
+            </table>
+            <div class="d-flex justify-content-center" *ngIf="userList?.length == 0">
+              <h3>No data found</h3>
+            </div>
+            <mat-progress-bar mode="query" *ngIf="loader"></mat-progress-bar>
+
+          </div>
+        </div>
+        <ngb-pagination class="d-flex justify-content-center"
+                        [maxSize]="6"
+                        [(page)]="page"
+                        [pageSize]="this.pagination?.itemPerPage"
+                        [collectionSize]="this.pagination?.total"
+                        (pageChange)="onPaginateChange($event)">
+        </ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>
+

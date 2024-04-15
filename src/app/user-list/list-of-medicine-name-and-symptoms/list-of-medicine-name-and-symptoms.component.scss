@@ -1,0 +1,34 @@
+#table {
+  background-color: #E5E5E5;
+
+  table.table-bordered > thead > tr > th {
+    border-bottom: 5px solid white !important;
+    background-color: #0040ED;
+    color: #FFF;
+    line-height: 2;
+    font-size: 11px;
+    text-align: center;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .table-bordered td, .table-bordered th {
+    border: none !important;
+  }
+
+
+  table.table-bordered > tbody > tr > td {
+    border-top: 5px solid white !important;
+    border-bottom: 5px solid white !important;
+    background-color: #F5F5F5;
+    color: #383348;
+    font-size: 11px;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+#close {
+  width: 30px;
+  cursor: pointer;
+}

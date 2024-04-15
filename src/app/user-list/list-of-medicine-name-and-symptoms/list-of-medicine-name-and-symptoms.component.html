@@ -1,1 +1,46 @@
-<p>list-of-medicine-name-and-symptoms works!</p>
+<div class="container-fluid" style="background: #e5e5e5; padding: 0;">
+  <div class="d-flex justify-content-end">
+    <img src="assets/image/close.png" id="close" (click)="closeDialogue()">
+  </div>
+
+  <div class="d-flex justify-content-center pt-2" *ngIf="prescriptionPicture !== 'null'">
+    <img [src]="prescriptionPicture" style="width: 490px; height: 500px;">
+  </div>
+  <!--  width: 500px; height: 550px-->
+  <div class="d-flex justify-content-center" *ngIf="prescriptionPicture == 'null'">
+    <div class="col-12">
+      <div class="row mt-3 pl-3">
+        <div class="col-md-12 pl-0">
+          <div id="table" class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="">
+              <tr class="subHeader">
+                <th>SL</th>
+                <th>Date</th>
+                <th>Medicine Name</th>
+                <th>Strength</th>
+                <th style="width: 230px">Generic Name</th>
+                <th>Prescribed Quantity</th>
+                <th>Purchased Quantity</th>
+              </tr>
+              </thead>
+              <tbody class="text-center" *ngIf="!loader">
+              <tr *ngFor="let medicine of medicineList, let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{formatDate(medicine.created_at)}}</td>
+                <td>{{medicine.medicine_info.brandName}}</td>
+                <td>{{medicine.medicine_info.strength}}</td>
+                <td style="width: 230px">{{medicine.medicine_info.genericName}}</td>
+                <td>{{medicine.prescribed_quantity}}</td>
+                <td>{{medicine.purchased_quantity}}</td>
+              </tr>
+              </tbody>
+            </table>
+            <mat-progress-bar mode="query" *ngIf="!medicineList"></mat-progress-bar>
+            <div class="d-flex justify-content-center" *ngIf="medicineList?.medicine_purchased?.length == 0">
+              <h3>No data found</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
