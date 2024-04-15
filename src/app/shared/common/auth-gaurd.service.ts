@@ -6,7 +6,7 @@ import {AuthenticationService} from "./authentication.service";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGaurdService {
+export class AuthGuardService {
 
   constructor(private router: Router,
               private auth: AuthenticationService,

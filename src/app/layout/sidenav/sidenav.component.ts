@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit{
     return localStorage.getItem(Localstorage?.KEYS?.images);
   }
   sidebarDynamicCssHandle() {
-    const {detect} = require('detect-browser');
+    const  {detect} = require('detect-browser');
     const browser = detect();
     this.browserName = browser.name;
     if (this.browserName==='firefox' || this.browserName==='safari'){
@@ -33,14 +33,14 @@ export class SidenavComponent implements OnInit{
       this.firefoxOrSafariBrowser = false;
     }
 
-    if (browser.name == 'firefox' || browser.name == 'safari') {
-      if (screen.width >= 1920) {
-        this.sidebarHeight = '883px';
-      } else if (screen.width <= 1366) {
-        this.sidebarHeight = '695px';
-      }
-    } else {
-      // for other browser do nothing
-    }
+    // if (browser.name == 'firefox' || browser.name == 'safari') {
+    //   if (screen.width >= 1920) {
+    //     this.sidebarHeight = '883px';
+    //   } else if (screen.width <= 1366) {
+    //     this.sidebarHeight = '695px';
+    //   }
+    // } else {
+    //   // for other browser do nothing
+    // }
   }
 }

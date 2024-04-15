@@ -40,6 +40,8 @@ import {ErrorInterceptorService} from "./services/error-interceptor.service";
 import {MatProgressBar} from "@angular/material/progress-bar";
 import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {NgSelectModule} from "@ng-select/ng-select";
+import {DropdownModule} from "primeng/dropdown";
+import {CurrentDateComponent} from "./widgets/current-date/current-date.component";
 
 
 
@@ -79,18 +81,20 @@ import {NgSelectModule} from "@ng-select/ng-select";
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    ToastrModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule,
-    MatProgressBar,
-    BsDatepickerModule.forRoot(),
-    NgSelectModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        ToastrModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+        MatProgressBar,
+        BsDatepickerModule.forRoot(),
+        NgSelectModule,
+        DropdownModule,
+        CurrentDateComponent
+    ],
   providers: [
     provideAnimationsAsync(),
     // {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true},

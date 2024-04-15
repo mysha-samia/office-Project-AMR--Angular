@@ -44,11 +44,12 @@ export class SelectorService {
   }
 
   getSubAgents(agentIds: any, agentType: string) {
-    // console.log(agentIds);
+    console.log(agentIds);
     let url = this.apiEndpoints.SELECTOR.GET_SUB_AGENTS(agentType);
     for (let i = 0; i < agentIds.length; i++) {
       url += `&agentId=${agentIds[i]}`
     }
-    return this.http.get(url);
+    return this.http.get(url + '&access_token=' + localStorage.getItem(Localstorage.KEYS.accessToken)) ;
   }
+
 }

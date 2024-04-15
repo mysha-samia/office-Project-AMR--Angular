@@ -270,25 +270,25 @@ export class ReportSelectorComponent implements OnInit {
     }
 
     // @ts-ignore
-    if (agentIds[0] === [-1] && agentIds[1] === undefined) {
+    if (agentIds[0] == [-1] && agentIds[1] == undefined) {
       for (let i = 1; i < this.zone[i]?.id; i++) {
         agentIds.push(this.zone[i].id);
       }
     }
     // @ts-ignore
-    if (agentIds[0] === [-2] && agentIds[1] === undefined) {
+    if (agentIds[0] == [-2] && agentIds[1] == undefined) {
       for (let i = 1; i < this.region[i]?.id; i++) {
         agentIds.push(this.region[i].id);
       }
     }
     // @ts-ignore
-    if (agentIds[0] === [-3] && agentIds[1] === undefined) {
+    if (agentIds[0] == [-3] && agentIds[1] == undefined) {
       for (let i = 1; i < this.area[i]?.id; i++) {
         agentIds.push(this.area[i].id);
       }
     }
     // @ts-ignore
-    if (agentIds[0] === [-4] && agentIds[1] === undefined) {
+    if (agentIds[0] == [-4] && agentIds[1] == undefined) {
       for (let i = 1; i < this.territory[i]?.id; i++) {
         agentIds.push(this.territory[i].id);
       }

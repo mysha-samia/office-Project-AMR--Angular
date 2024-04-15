@@ -87,6 +87,7 @@ export class SelectorComponent implements OnInit {
           this.area.splice(0, 0, {id: -1, name: 'All'});
         } else if (type === 'SSK_TERRITORY') {
           this.territory = res?.content;
+          console.log(this.territory);
           this.territory = this.territory.sort((a: { name: string; }, b: { name: any; }) => a.name.localeCompare(b.name));
           this.territoryIds = this.territory.map((r: any) => r.id);
           this.territory.splice(0, 0, {id: -1, name: 'All'});
@@ -98,7 +99,7 @@ export class SelectorComponent implements OnInit {
         }
         this.requestSubmitted = false;
 
-      }, error => this.requestSubmitted = false)
+      }, (error:any) => this.requestSubmitted = false)
     }
   }
 

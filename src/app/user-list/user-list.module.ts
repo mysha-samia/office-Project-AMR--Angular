@@ -7,8 +7,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
-  declarations: [UserListComponent,
-  ListOfMedicineNameAndSymptomsComponent
+  declarations: [//UserListComponent,
+  // ListOfMedicineNameAndSymptomsComponent
   ],
   imports: [
     CommonModule,

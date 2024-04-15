@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-hospital-graph',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './hospital-graph.component.scss'
 })
 export class HospitalGraphComponent {
+
 
 }

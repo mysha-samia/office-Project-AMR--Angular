@@ -6,13 +6,13 @@
   background-color: #FFFFFF;
 }
 
+#numberCount {
+  background-color: #FFFFFF;
+}
+
 .input-group-text {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
-.selectorLabel {
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
 }
 
 .btn-default {
@@ -20,6 +20,10 @@
   color: #FFFFFF;
 }
 
+.selectorLabel {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
 
 .form-control {
   background-color: #E8F6FE;
@@ -40,9 +44,6 @@
 .countBar {
   background-color: #E8EFFD;
 }
-.countLogo {
-  height: 50px;
-}
 
 .countNumber {
   font-size: 17px;
@@ -55,6 +56,10 @@
   font-size: 17px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+}
+
+.countLogo {
+  height: 50px;
 }
 
 .secondCountingCard {
@@ -103,3 +108,5 @@
 .cursorPointer {
   cursor: pointer;
 }
+
+

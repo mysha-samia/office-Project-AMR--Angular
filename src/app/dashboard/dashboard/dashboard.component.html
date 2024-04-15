@@ -1,8 +1,8 @@
 <div class="container-fluid position-top" id="marginTop">
   <div class="mb-3"></div>
-  <!--  <app-current-date></app-current-date>-->
+  <app-current-date></app-current-date>
 
-
+  <!--  top count bar start-->
   <!--  for distributor-->
   <div class="card" *ngIf="!userTypeAMR">
     <div class="card-body">
@@ -13,7 +13,7 @@
               <div class="row">
                 <div class="col-4">
                   <div class="d-flex justify-content-end">
-                    <img src="../../../assets/logo/world-location.svg" class="countLogo pt-2" alt="logoLocation">
+                    <img src="../../../assets/logo/world-location.svg" class="countLogo pt-2">
                   </div>
                 </div>
                 <div class="col-8">
@@ -21,7 +21,8 @@
                     <h5 class="headerText mb-1">Zone</h5>
                   </div>
                   <div class="d-flex justify-content-start">
-                    <h5 class="countNumber">{{distributorUsersSummaryData?.totalZone ? distributorUsersSummaryData.totalZone : '0'}}</h5>
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalZone ? distributorUsersSummaryData.totalZone : '0'}}</h5>
                   </div>
                 </div>
               </div>
@@ -89,7 +90,8 @@
                     <h5 class="headerText mb-1">Territory</h5>
                   </div>
                   <div class="d-flex justify-content-start">
-                    <h5 class="countNumber">{{distributorUsersSummaryData?.totalTerritory ? distributorUsersSummaryData.totalTerritory : '0'}}</h5>
+                    <h5
+                      class="countNumber">{{distributorUsersSummaryData?.totalTerritory ? distributorUsersSummaryData.totalTerritory : '0'}}</h5>
                   </div>
                 </div>
               </div>
@@ -102,7 +104,7 @@
               <div class="row">
                 <div class="col-4">
                   <div class="d-flex justify-content-end">
-                    <img src="../../../assets/logo/ssk.svg" class="countLogo pt-2" alt="">
+                    <img src="../../../assets/logo/ssk.svg" class="countLogo pt-2">
                   </div>
                 </div>
                 <div class="col-8">
@@ -117,6 +119,7 @@
               </div>
             </div>
           </div>
+
         </div>
         <div class="col-4 paddingLeft">
           <div class="card">
@@ -124,7 +127,7 @@
               <div class="row">
                 <div class="col-4">
                   <div class="d-flex justify-content-end">
-                    <img src="../../../assets/logo/total-user.svg" class="countLogo pt-2" alt="">
+                    <img src="../../../assets/logo/total-user.svg" class="countLogo pt-2">
                   </div>
                 </div>
                 <div class="col-8">
@@ -243,9 +246,10 @@
     </div>
   </div>
   <app-selector (filterData)="filterData($event)"></app-selector>
+  <!--  counters-->
+  <!--  <nz-spin nzTip='Loading...' nzSize='large'>-->
+  <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>
 
-    <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>
-        <mat-progress-bar mode="query" *ngIf="requestSubmitted"></mat-progress-bar>
   <!--  for distributor-->
   <div *ngIf="!requestSubmitted && !userTypeAMR" class="shadow p-3 mb-5 bg-body rounded">
     <div class="row">
@@ -431,7 +435,8 @@
               <h5 class="headerText mb-1">User with medicine name</h5>
             </div>
             <div class="d-flex justify-content-center">
-              <h5 class="countNumber">{{serviceSummaryData?.totalUserWithMedicineName ? serviceSummaryData?.totalUserWithMedicineName : 0}}</h5>
+              <h5
+                class="countNumber">{{serviceSummaryData?.totalUserWithMedicineName ? serviceSummaryData?.totalUserWithMedicineName : 0}}</h5>
             </div>
           </div>
         </div>
@@ -451,6 +456,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-6 paddingLeft paddingBottom cursorPointer" (click)="gotoUserList('USER_TAKEN_TELEMEDICINE')">
         <div class="card secondCountingCard">
           <div class="card-body">
@@ -458,7 +464,8 @@
               <h5 class="headerText mb-1">User taken telemedicine service</h5>
             </div>
             <div class="d-flex justify-content-center">
-              <h5 class="countNumber">{{serviceSummaryData?.userTakenTelemedicine ? serviceSummaryData?.userTakenTelemedicine : 0}}</h5>
+              <h5
+                class="countNumber">{{serviceSummaryData?.userTakenTelemedicine ? serviceSummaryData?.userTakenTelemedicine : 0}}</h5>
             </div>
           </div>
         </div>

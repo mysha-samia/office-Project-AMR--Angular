@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DashboardService} from "../../services/dashboard.service";
 import {AuthenticationService} from "../../shared/common/authentication.service";
-
-import {Router} from "@angular/router";
 import {Localstorage} from "../../shared/common/localstorage";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,12 +10,12 @@ import {Localstorage} from "../../shared/common/localstorage";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  userTypeAMR: boolean = false;
-  requestSubmitted: boolean = true;
-  getUserTypeFromLocalStorage: any = null;
+
   distributorUsersSummaryData: any;
   serviceSummaryData: any;
-
+  requestSubmitted: boolean = true;
+  userTypeAMR: boolean = false;
+  getUserTypeFromLocalStorage: any = null;
 
   constructor(private dashboardService: DashboardService, private auth: AuthenticationService, private router: Router) {
   }
@@ -60,11 +59,6 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-
-  gotoUserList(user_type: string) {
-    localStorage.setItem('userListType', user_type);
-    this.router.navigate(['user-list']);
-  }
   // In your component or service
   clearCookies() {
     const cookies = document.cookie.split(";");
@@ -77,6 +71,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-
+  gotoUserList(user_type: string) {
+    localStorage.setItem('userListType', user_type);
+    this.router.navigate(['user-list']);
+  }
 }
 
