@@ -5,6 +5,7 @@ import {GraphResponseModel} from "../models/GraphResponseModel";
 import {Observable} from "rxjs";
 import {GraphDataTypeModel} from "../models/GraphDataTypeModel";
 import {AuthenticationService} from "../shared/common/authentication.service";
+import {Localstorage} from "../shared/common/localstorage";
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +15,15 @@ export class GraphService {
   constructor(private http: HttpClient, private apiEndPoints: ApiEndPointsService, private auth: AuthenticationService) {
   }
 
-  getGraphData(event: any, selectedService: any[]): Observable<GraphResponseModel> {
+  getGraphData(event: any,startDate: any, endDate: any, agentId: any, manufacturerName: any,selectedService: any[]): Observable<GraphResponseModel> {
+      let    parameter = 'distributor/ssk';
 
-    let url = this.apiEndPoints.GRAPH.GET_GRAPH_DATA(event.startDate, event.endDate, event.agentId, this.auth.getManufacturerName()) + GraphService.getTypes(selectedService);
+    let url = this.apiEndPoints.GRAPH.GET_GRAPH_DATA(event.startDate, event.endDate, event.agentId ,this.auth.getManufacturerName() )+ GraphService.getTypes(selectedService)+ '&access_token='+localStorage.getItem(Localstorage.KEYS.accessToken);
+
     return this.http.get<GraphResponseModel>(url);
+
+
+
   }
 
   monthDiffMoreThan13(d1: Date, d2: Date) {
@@ -61,4 +67,14 @@ export class GraphService {
       })
     }
   }
+
+  private getAgentId(agentIds: any) {
+    let url = '';
+    for (let i = 0; i < agentIds.length; i++) {
+      url += `&agent_ids=${agentIds[i]}`
+    }
+    return url;
+    }
+
+
 }

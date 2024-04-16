@@ -17,7 +17,7 @@ export class DashboardService {
   }
 
   getServiceInfo(event: any, name: any = this.auth.getManufacturerName()) {
-    return this.http.get(this.apiEndpoints.DASHBOARD.GET_SERVICE_INFO(event.startDate, event.endDate, event.agentId, name))
+    return this.http.get(this.apiEndpoints.DASHBOARD.GET_SERVICE_INFO(event.startDate, event.endDate, event.agentId, name) + '&access_token='+localStorage.getItem(Localstorage.KEYS.accessToken));
   }
 }
 

@@ -3,6 +3,7 @@ import {ConstantsService} from "../../shared/common/constants.service";
 import {GraphService} from "../../services/graph.service";
 import {GraphResponseModel} from "../../models/GraphResponseModel";
 import {ToastrService} from "ngx-toastr";
+import {AuthenticationService} from "../../shared/common/authentication.service";
 
 @Component({
   selector: 'app-service-graph',
@@ -19,14 +20,14 @@ export class ServiceGraphComponent implements OnInit {
   eventData: any;
   userTypeAMR: boolean = localStorage.getItem('userType') === 'AMR';
 
-  constructor(private service: GraphService) {
+  constructor(private service: GraphService ,private auth:AuthenticationService) {
   }
 
   ngOnInit(): void {
   }
 
   getGraphData(event: any) {
-    // console.log(event);
+    console.log(event);
     this.eventData = event;
     if (this.service.monthDiffMoreThan13(new Date(event.startDate), new Date(event.endDate))) {
       // this.toast.warning("You have selected more than 13 months");
@@ -34,7 +35,7 @@ export class ServiceGraphComponent implements OnInit {
       return;
     }
     this.dataLoaded = false;
-    this.service.getGraphData(event, this.selectedService).subscribe((res: GraphResponseModel) => {
+    this.service.getGraphData(this.eventData,event.startDate,event.endDate,event.agentId,this.auth.getManufacturerName(), this.selectedService,).subscribe((res: GraphResponseModel) => {
       this.serviceData = res;
       this.dataLoaded = true;
     }, error => this.dataLoaded = false)
